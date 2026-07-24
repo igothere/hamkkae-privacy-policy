@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#FAF7F0" />
+  <meta name="description" content="함깨 앱 개인정보처리방침" />
+  <title>개인정보처리방침 | 함깨</title>
+
+  <style>
+    :root {
+      --bg: #FAF7F0;
+      --surface: #FFFCF7;
+      --surface-soft: #F7F4EB;
+      --text: #242724;
+      --muted: #767B75;
+      --line: #DDD9CE;
+      --line-strong: #C7C2B5;
+      --brand: #355349;
+      --brand-soft: #DDE8E3;
+      --accent: #D97D5B;
+      --accent-soft: #F6DCD0;
+      --shadow: 0 12px 32px rgba(53, 83, 73, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --content-width: 920px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgba(221, 232, 227, 0.58), transparent 360px),
+        var(--bg);
+      color: var(--text);
+      font-family:
+        "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: var(--brand);
+      text-underline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 999;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: white;
+      text-decoration: none;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus { top: 16px; }
+
+    .page-shell {
+      width: min(calc(100% - 32px), var(--content-width));
+      margin: 0 auto;
+      padding: max(28px, env(safe-area-inset-top)) 0 max(56px, env(safe-area-inset-bottom));
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: 22px;
+    }
+
+    .version {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 42px 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 252, 247, .92);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "✦";
+      position: absolute;
+      right: 34px;
+      top: 20px;
+      color: var(--accent);
+      font-size: 48px;
+      opacity: .28;
+      transform: rotate(10deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #754231;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 700px;
+      font-size: clamp(32px, 7vw, 48px);
+      line-height: 1.22;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      border-radius: 4px var(--radius-sm) var(--radius-sm) 4px;
+      background: #FFF6F1;
+      color: #5E4034;
+      font-size: 14px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 22px 0 30px;
+    }
+
+    .summary-card {
+      min-height: 148px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .summary-card strong {
+      display: block;
+      margin: 8px 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .summary-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .toc {
+      margin: 0 0 30px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+    }
+
+    .toc h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    .toc ol {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 20px;
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+    }
+
+    .policy-section {
+      scroll-margin-top: 20px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 252, 247, .94);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 0 0 18px;
+      font-size: 25px;
+      line-height: 1.35;
+      letter-spacing: -0.045em;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: white;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 19px;
+      letter-spacing: -0.03em;
+    }
+
+    h3:first-of-type { margin-top: 4px; }
+
+    p { margin: 10px 0; }
+
+    ul {
+      margin: 10px 0 16px;
+      padding-left: 22px;
+    }
+
+    li + li { margin-top: 6px; }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 14px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    th {
+      background: var(--surface-soft);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    td {
+      color: #3F433F;
+      font-size: 15px;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #ECE9DF;
+      color: #4C514C;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .chip.accent {
+      background: var(--accent-soft);
+      color: #754231;
+    }
+
+    .positive-box,
+    .warning-box,
+    .info-box {
+      margin: 18px 0 4px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+    }
+
+    .positive-box {
+      background: #EDF4F1;
+      border: 1px solid #D0E0D9;
+    }
+
+    .warning-box {
+      background: #FFF5EF;
+      border: 1px solid #F0D1C3;
+    }
+
+    .info-box {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .box-title {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: white;
+    }
+
+    .step-badge {
+      flex: 0 0 auto;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px 18px;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--brand);
+      color: white;
+    }
+
+    .contact-card dt {
+      color: rgba(255,255,255,.72);
+    }
+
+    .contact-card dd {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .placeholder {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 6px;
+      background: #FFF0A8;
+      color: #4A3D00;
+    }
+
+    .footer {
+      margin-top: 26px;
+      padding: 24px 8px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .top-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+      padding: 10px 16px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(calc(100% - 24px), var(--content-width));
+      }
+
+      .hero {
+        padding: 32px 24px;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card {
+        min-height: auto;
+      }
+
+      .toc ol {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-section {
+        padding: 24px 20px;
+        border-radius: 24px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .contact-card dd + dt {
+        margin-top: 12px;
+      }
+    }
+
+    @media print {
+      body { background: white; }
+      .page-shell { width: 100%; padding: 0; }
+      .hero, .policy-section, .toc, .summary-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+      .top-button, .skip-link { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+  <div class="page-shell" id="top">
+    <header>
+      <div class="topbar">
+        <a class="brand-mark" href="#top" aria-label="함깨 개인정보처리방침 처음으로">
+          <span class="brand-icon" aria-hidden="true">🐾</span>
+          <span>함깨</span>
+        </a>
+        <span class="version">개인정보처리방침 v1.0</span>
+      </div>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">개인정보 안내</p>
+        <h1 id="page-title">개인정보처리방침</h1>
+        <p class="hero-lead">
+          함깨는 사진과 이야기의 소중한 내용을 기기 안에서 처리하고,
+          서비스 운영에 필요한 최소한의 기술 정보만 수집합니다.
+        </p>
+        <div class="hero-meta">
+          <span><strong>시행일:</strong> 2026년 7월 24일</span>
+          <span><strong>최종 수정일:</strong> 2026년 7월 24일</span>
+        </div>
+        <div class="notice">
+          공개 전 아래의 <strong>운영자명·이메일</strong> 표시 부분을 실제 정보로 반드시 교체해 주세요.
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="핵심 개인정보 처리 원칙">
+        <article class="summary-card">
+          <span class="summary-icon" aria-hidden="true">📱</span>
+          <strong>콘텐츠는 기기 안에서</strong>
+          <p>사진·일기·메모·반려동물 프로필은 서버로 전송하지 않습니다.</p>
+        </article>
+        <article class="summary-card">
+          <span class="summary-icon" aria-hidden="true">📊</span>
+          <strong>최소한의 이용 통계</strong>
+          <p>기능 개선과 오류 분석을 위해 앱 활동 및 기기 환경 정보를 처리합니다.</p>
+        </article>
+        <article class="summary-card">
+          <span class="summary-icon" aria-hidden="true">⚙️</span>
+          <strong>설정에서 선택</strong>
+          <p>이용 통계 수집은 앱의 데이터 수집 설정에서 끌 수 있습니다.</p>
+        </article>
+      </section>
+
+      <nav class="toc" aria-label="개인정보처리방침 목차">
+        <h2>목차</h2>
+        <ol>
+          <li><a href="#section-1">수집하는 개인정보</a></li>
+          <li><a href="#section-2">수집하지 않는 정보</a></li>
+          <li><a href="#section-3">처리 목적</a></li>
+          <li><a href="#section-4">보유 및 이용 기간</a></li>
+          <li><a href="#section-5">처리 위탁 및 국외 이전</a></li>
+          <li><a href="#section-6">이용자의 권리와 거부 방법</a></li>
+          <li><a href="#section-7">자동 수집 기술</a></li>
+          <li><a href="#section-8">안전성 확보 조치</a></li>
+          <li><a href="#section-9">방침 변경</a></li>
+          <li><a href="#section-10">문의처</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="policy-section" id="section-1">
+        <h2 class="section-title">
+          <span class="section-number">1</span>
+          <span>수집하는 개인정보 및 이용 정보</span>
+        </h2>
+
+        <p>
+          함깨는 회원가입이나 로그인을 제공하지 않으며, 서비스 제공·개선과 안정적인 운영을 위해
+          아래 정보를 자동으로 수집하거나 처리할 수 있습니다.
+        </p>
+
+        <h3>A. 식별자</h3>
+        <div class="data-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>수집 환경</th>
+                <th>이용 목적</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>광고 식별자(GAID)</td>
+                <td>광고가 포함된 빌드 및 Google AdMob 사용 시</td>
+                <td>광고 제공, 광고 노출 빈도 조절, 부정 이용 방지</td>
+              </tr>
+              <tr>
+                <td>앱 인스턴스 ID / Firebase 설치 ID</td>
+                <td>Firebase Analytics, Remote Config, Installations</td>
+                <td>앱 이용 통계 분석, 설정 제공, 서비스 개선</td>
+              </tr>
+              <tr>
+                <td>Crashlytics 설치 식별자</td>
+                <td>Firebase Crashlytics</td>
+                <td>크래시 및 오류 보고의 구분과 분석</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>B. 사용 통계 및 앱 활동</h3>
+        <ul>
+          <li><strong>이벤트:</strong> 이야기·리포트 생성, AI 모델 다운로드, 광고 시청, 공유, 알림 설정, 온보딩 진행 등</li>
+          <li><strong>이벤트 파라미터:</strong> 앱 언어, 추론 백엔드(GPU/CPU), 모델 버전, 추론 소요 시간 등</li>
+          <li><strong>자동 수집 정보:</strong> 최초 실행, 세션, 접속 빈도, 사용자 참여, 재방문 관련 통계 등</li>
+        </ul>
+
+        <div class="warning-box">
+          <span class="box-title">콘텐츠 본문은 분석 이벤트에 포함하지 않습니다.</span>
+          이벤트명과 기술적 상태값만 수집하며, 사진·이야기 본문·제목·메모·태그는 Firebase Analytics로 전송하지 않습니다.
+        </div>
+
+        <h3>C. 기기 및 앱 환경 정보</h3>
+        <p>
+          Firebase 및 광고 SDK가 기기 모델, 운영체제 버전, 언어·국가·로케일, 앱 버전,
+          화면 관련 정보 등의 기술 정보를 자동으로 수집할 수 있습니다.
+        </p>
+
+        <h3>D. 크래시 및 성능 정보</h3>
+        <ul>
+          <li>오류 및 크래시 스택 트레이스</li>
+          <li>오류 발생 시점의 앱·기기 상태</li>
+          <li>추론 백엔드, 모델 버전 등의 커스텀 진단 키</li>
+        </ul>
+
+        <h3>E. 사진 위치 정보</h3>
+        <p>
+          이용자가 선택한 사진에 GPS 위치정보가 포함되어 있고 관련 권한을 허용한 경우,
+          함깨는 사진의 EXIF 메타데이터에서 GPS 좌표를 읽어 위치명으로 변환할 수 있습니다.
+        </p>
+        <div class="info-box">
+          <span class="box-title">위치 변환 시 유의사항</span>
+          위치명 변환을 위해 Android Geocoder가 사용되며, 기기 및 서비스 환경에 따라
+          좌표가 Google의 지오코딩 서비스로 전송될 수 있습니다. 이 과정에서
+          <strong>사진 자체는 전송하지 않고 좌표만 전송</strong>합니다.
+        </div>
+
+        <h3>F. 네트워크 접속 정보</h3>
+        <p>
+          AI 모델 다운로드를 위한 Hugging Face 접속 및 Firebase·AdMob 등 외부 서비스와의 통신 과정에서
+          IP 주소, 요청 시각, 요청 정보 등의 네트워크 정보가 해당 서비스 제공자에게 전달될 수 있습니다.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-2">
+        <h2 class="section-title">
+          <span class="section-number">2</span>
+          <span>수집하지 않는 정보</span>
+        </h2>
+
+        <div class="positive-box">
+          <span class="box-title">함깨의 핵심 콘텐츠는 온디바이스로 처리합니다.</span>
+          아래 정보는 이용자의 기기 안에서 처리되며, 함깨 운영 서버 또는 Firebase Analytics,
+          Crashlytics, 광고 SDK로 전송하지 않습니다.
+        </div>
+
+        <div class="chip-list" aria-label="수집하지 않는 정보">
+          <span class="chip accent">사진·영상</span>
+          <span class="chip accent">이야기 본문</span>
+          <span class="chip accent">제목</span>
+          <span class="chip accent">메모·태그</span>
+          <span class="chip accent">반려동물 이름</span>
+          <span class="chip accent">반려동물 프로필</span>
+          <span class="chip accent">위치 메모</span>
+        </div>
+
+        <p>
+          또한 회원가입 및 로그인 기능이 없으므로 이름, 이메일 주소, 전화번호 등
+          이용자를 직접 식별하기 위한 회원정보를 수집하지 않습니다.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-3">
+        <h2 class="section-title">
+          <span class="section-number">3</span>
+          <span>개인정보의 처리 목적</span>
+        </h2>
+
+        <ul>
+          <li>앱 기능 이용 현황 분석 및 서비스 개선</li>
+          <li>앱 오류·크래시·성능 문제 분석과 안정성 향상</li>
+          <li>광고 제공, 광고 빈도 조절 및 부정 이용 방지</li>
+          <li>사진의 GPS 좌표를 사람이 이해할 수 있는 위치명으로 표시</li>
+          <li>AI 모델 및 앱 설정 파일 제공</li>
+        </ul>
+
+        <p>
+          수집된 정보는 위 목적 범위 내에서만 이용하며, 목적이 변경되는 경우 관련 법령에 따라
+          별도 안내 또는 필요한 동의 절차를 진행합니다.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-4">
+        <h2 class="section-title">
+          <span class="section-number">4</span>
+          <span>보유 및 이용 기간</span>
+        </h2>
+
+        <div class="data-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>보유 기간</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Firebase Analytics 이벤트</td>
+                <td>최대 90일</td>
+                <td>Firebase 콘솔의 실제 데이터 보유 설정에 따름</td>
+              </tr>
+              <tr>
+                <td>Firebase Crashlytics 정보</td>
+                <td>최대 90일</td>
+                <td>오류 분석 목적 달성 또는 서비스 제공자의 정책에 따라 삭제</td>
+              </tr>
+              <tr>
+                <td>광고 관련 정보</td>
+                <td>Google 광고 정책 및 설정에 따름</td>
+                <td>광고 식별자 재설정 및 기기 설정의 영향을 받을 수 있음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          함깨는 회원 계정을 운영하지 않습니다. 앱을 삭제하면 기기에 저장된 앱 데이터가 제거되고,
+          기존 앱 설치 식별자와의 연결도 단절됩니다. 다만 외부 서비스 제공자가 이미 처리한 정보는
+          각 제공자의 보유 정책에 따라 일정 기간 유지될 수 있습니다.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-5">
+        <h2 class="section-title">
+          <span class="section-number">5</span>
+          <span>처리 위탁 및 국외 이전</span>
+        </h2>
+
+        <p>
+          함깨는 서비스 운영을 위해 아래 외부 서비스를 사용합니다. 이 과정에서 정보가
+          대한민국 외 지역의 서버에서 처리될 수 있습니다.
+        </p>
+
+        <div class="data-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>수탁자·제공자</th>
+                <th>이용 서비스</th>
+                <th>이전·처리 항목</th>
+                <th>목적</th>
+                <th>처리 국가·방식</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google LLC</td>
+                <td>Firebase Analytics, Crashlytics, Remote Config, Installations, AdMob, Geocoding</td>
+                <td>설치 식별자, 앱 활동, 기기 정보, 오류 정보, 광고 식별자, 위치 좌표, IP·요청 정보</td>
+                <td>통계 분석, 오류 분석, 설정 제공, 광고 제공, 위치명 변환</td>
+                <td>서비스 이용 시 네트워크를 통해 미국 등 Google의 데이터 처리 지역으로 전송</td>
+              </tr>
+              <tr>
+                <td>Hugging Face, Inc.</td>
+                <td>AI 모델 파일 다운로드</td>
+                <td>IP 주소, 요청 정보</td>
+                <td>AI 모델 제공 및 다운로드</td>
+                <td>모델 다운로드 요청 시 국외 서버로 전송</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          국외 이전되는 정보의 보유 기간은 본 방침의 보유 기간 및 각 서비스 제공자의 정책에 따릅니다.
+          이용자는 아래 ‘이용자의 권리와 거부 방법’에 따라 일부 처리를 제한할 수 있습니다.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-6">
+        <h2 class="section-title">
+          <span class="section-number">6</span>
+          <span>이용자의 권리와 수집 거부 방법</span>
+        </h2>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step-badge">통계</span>
+            <div>
+              <strong>사용 통계 수집 거부</strong><br />
+              앱의 <strong>더보기 → 설정 → 데이터 수집</strong>에서 이용 통계 수집을 끌 수 있습니다.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">오류</span>
+            <div>
+              <strong>크래시 보고</strong><br />
+              앱 안정성과 오류 대응을 위해 Crashlytics 정보는 상시 수집되며 별도 토글을 제공하지 않습니다.
+              사진이나 이야기 본문은 크래시 보고에 포함하지 않습니다.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">위치</span>
+            <div>
+              <strong>사진 위치정보 사용 제한</strong><br />
+              사진 위치정보 접근 권한을 허용하지 않거나 위치정보가 없는 사진을 선택하면 GPS 좌표를 사용하지 않습니다.
+              Android의 사진 위치정보 접근 권한 설정에서 언제든 변경할 수 있습니다.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">광고</span>
+            <div>
+              <strong>광고 식별자 통제</strong><br />
+              Android 기기의 광고 개인정보 보호 또는 광고 설정에서 광고 ID를 삭제·재설정하거나
+              광고 개인화 관련 선택을 변경할 수 있습니다.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">삭제</span>
+            <div>
+              <strong>앱 데이터와 설치 식별자 연결 해제</strong><br />
+              앱을 삭제하면 기기에 저장된 함깨의 로컬 데이터가 삭제되고 앱 설치 식별자와의 연결이 단절됩니다.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section" id="section-7">
+        <h2 class="section-title">
+          <span class="section-number">7</span>
+          <span>자동 수집 기술</span>
+        </h2>
+
+        <p>
+          함깨는 Firebase SDK와 Google Mobile Ads SDK 등 제3자 SDK를 사용합니다.
+          해당 SDK는 앱 실행, 이용 이벤트, 설치 식별자, 기기 환경, 오류 및 광고 관련 정보를
+          자동으로 수집할 수 있습니다.
+        </p>
+
+        <ul>
+          <li><strong>Firebase Analytics:</strong> 앱 이용 통계와 자동 이벤트 수집</li>
+          <li><strong>Firebase Crashlytics:</strong> 크래시, 오류 및 진단 정보 수집</li>
+          <li><strong>Firebase Remote Config·Installations:</strong> 앱 설정 제공 및 설치 단위 식별</li>
+          <li><strong>Google AdMob:</strong> 광고 제공, 빈도 조절 및 부정 이용 방지</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="section-8">
+        <h2 class="section-title">
+          <span class="section-number">8</span>
+          <span>개인정보의 안전성 확보 조치</span>
+        </h2>
+
+        <ul>
+          <li>사진과 이야기 등 핵심 콘텐츠를 가능한 범위에서 기기 내 처리</li>
+          <li>분석 이벤트 및 오류 로그에 콘텐츠 본문과 직접 식별정보를 기록하지 않도록 제한</li>
+          <li>외부 서비스와의 통신 시 HTTPS 등 암호화된 통신 사용</li>
+          <li>서비스 운영에 필요한 최소 범위의 정보만 수집</li>
+          <li>외부 SDK와 개인정보 처리 항목을 정기적으로 점검</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="section-9">
+        <h2 class="section-title">
+          <span class="section-number">9</span>
+          <span>개인정보처리방침의 변경</span>
+        </h2>
+
+        <p>
+          본 방침의 내용이 변경되는 경우 앱 업데이트 안내, 앱 내 공지 또는 본 페이지를 통해
+          변경 내용과 시행일을 안내합니다. 이용자의 권리에 중대한 영향을 미치는 변경이 있는 경우
+          시행 전에 충분한 기간을 두고 알립니다.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-10">
+        <h2 class="section-title">
+          <span class="section-number">10</span>
+          <span>개인정보 관련 문의처</span>
+        </h2>
+
+        <p>
+          개인정보 처리와 관련한 문의, 불만 또는 권리 행사는 아래 연락처로 요청할 수 있습니다.
+        </p>
+
+        <dl class="contact-card">
+          <dt>서비스명</dt>
+          <dd>함깨</dd>
+
+          <dt>운영자·상호</dt>
+          <dd><span class="placeholder">함깨</span></dd>
+
+          <dt>이메일</dt>
+          <dd><span class="placeholder">cool.sukim@gmail.com</span></dd>
+
+          <dt>처리 시간</dt>
+          <dd>문의 접수 후 합리적인 기간 내 답변</dd>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>함께한 순간에서, 미처 깨닫지 못했던 마음 한 줄을 발견하다.</p>
+      <p>© 2026 함깨. All rights reserved.</p>
+      <a class="top-button" href="#top">위로 올라가기 ↑</a>
+    </footer>
+  </div>
+</body>
+</html>
