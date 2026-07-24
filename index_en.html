@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#FAF7F0" />
+  <meta name="description" content="Hamkkae App Privacy Policy" />
+  <title>Privacy Policy | Hamkkae</title>
+
+  <style>
+    :root {
+      --bg: #FAF7F0;
+      --surface: #FFFCF7;
+      --surface-soft: #F7F4EB;
+      --text: #242724;
+      --muted: #767B75;
+      --line: #DDD9CE;
+      --line-strong: #C7C2B5;
+      --brand: #355349;
+      --brand-soft: #DDE8E3;
+      --accent: #D97D5B;
+      --accent-soft: #F6DCD0;
+      --shadow: 0 12px 32px rgba(53, 83, 73, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --content-width: 920px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgba(221, 232, 227, 0.58), transparent 360px),
+        var(--bg);
+      color: var(--text);
+      font-family:
+        "Inter", "Pretendard", "Noto Sans",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      word-break: normal;
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: var(--brand);
+      text-underline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 999;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: white;
+      text-decoration: none;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus { top: 16px; }
+
+    .page-shell {
+      width: min(calc(100% - 32px), var(--content-width));
+      margin: 0 auto;
+      padding: max(28px, env(safe-area-inset-top)) 0 max(56px, env(safe-area-inset-bottom));
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: 22px;
+    }
+
+    .version {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 42px 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 252, 247, .92);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "✦";
+      position: absolute;
+      right: 34px;
+      top: 20px;
+      color: var(--accent);
+      font-size: 48px;
+      opacity: .28;
+      transform: rotate(10deg);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #754231;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 700px;
+      font-size: clamp(32px, 7vw, 48px);
+      line-height: 1.22;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      border-radius: 4px var(--radius-sm) var(--radius-sm) 4px;
+      background: #FFF6F1;
+      color: #5E4034;
+      font-size: 14px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 22px 0 30px;
+    }
+
+    .summary-card {
+      min-height: 148px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .summary-card strong {
+      display: block;
+      margin: 8px 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .summary-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .toc {
+      margin: 0 0 30px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+    }
+
+    .toc h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+    }
+
+    .toc ol {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 20px;
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      color: var(--brand);
+      text-decoration: underline;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+    }
+
+    .policy-section {
+      scroll-margin-top: 20px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 252, 247, .94);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 0 0 18px;
+      font-size: 25px;
+      line-height: 1.35;
+      letter-spacing: -0.045em;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: white;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 19px;
+      letter-spacing: -0.03em;
+    }
+
+    h3:first-of-type { margin-top: 4px; }
+
+    p { margin: 10px 0; }
+
+    ul {
+      margin: 10px 0 16px;
+      padding-left: 22px;
+    }
+
+    li + li { margin-top: 6px; }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 14px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    th {
+      background: var(--surface-soft);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    td {
+      color: #3F433F;
+      font-size: 15px;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #ECE9DF;
+      color: #4C514C;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .chip.accent {
+      background: var(--accent-soft);
+      color: #754231;
+    }
+
+    .positive-box,
+    .warning-box,
+    .info-box {
+      margin: 18px 0 4px;
+      padding: 18px 20px;
+      border-radius: var(--radius-sm);
+    }
+
+    .positive-box {
+      background: #EDF4F1;
+      border: 1px solid #D0E0D9;
+    }
+
+    .warning-box {
+      background: #FFF5EF;
+      border: 1px solid #F0D1C3;
+    }
+
+    .info-box {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .box-title {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: white;
+    }
+
+    .step-badge {
+      flex: 0 0 auto;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 10px 18px;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--brand);
+      color: white;
+    }
+
+    .contact-card dt {
+      color: rgba(255,255,255,.72);
+    }
+
+    .contact-card dd {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .placeholder {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 6px;
+      background: #FFF0A8;
+      color: #4A3D00;
+    }
+
+    .footer {
+      margin-top: 26px;
+      padding: 24px 8px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .top-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+      padding: 10px 16px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(calc(100% - 24px), var(--content-width));
+      }
+
+      .hero {
+        padding: 32px 24px;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card {
+        min-height: auto;
+      }
+
+      .toc ol {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-section {
+        padding: 24px 20px;
+        border-radius: 24px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .contact-card dd + dt {
+        margin-top: 12px;
+      }
+    }
+
+    @media print {
+      body { background: white; }
+      .page-shell { width: 100%; padding: 0; }
+      .hero, .policy-section, .toc, .summary-card {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+      .top-button, .skip-link { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="page-shell" id="top">
+    <header>
+      <div class="topbar">
+        <a class="brand-mark" href="#top" aria-label="Go to the top of the Hamkkae Privacy Policy">
+          <span class="brand-icon" aria-hidden="true">🐾</span>
+          <span>Hamkkae</span>
+        </a>
+        <span class="version">Privacy Policy v1.0</span>
+      </div>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Privacy Notice</p>
+        <h1 id="page-title">Privacy Policy</h1>
+        <p class="hero-lead">
+          Hamkkae processes your photos and stories on your device and collects only the minimum technical information required to operate and improve the service.
+        </p>
+        <div class="hero-meta">
+          <span><strong>Effective date:</strong> July 24, 2026</span>
+          <span><strong>Last updated:</strong> July 24, 2026</span>
+        </div>
+        <div class="notice">
+          Before publishing, replace the highlighted <strong>operator name and email address</strong> below with the actual information.
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Core privacy principles">
+        <article class="summary-card">
+          <span class="summary-icon" aria-hidden="true">📱</span>
+          <strong>Your content stays on-device</strong>
+          <p>Photos, stories, notes, and pet profiles are not sent to our servers.</p>
+        </article>
+        <article class="summary-card">
+          <span class="summary-icon" aria-hidden="true">📊</span>
+          <strong>Minimal usage analytics</strong>
+          <p>We process limited app activity and device information to improve features and diagnose errors.</p>
+        </article>
+        <article class="summary-card">
+          <span class="summary-icon" aria-hidden="true">⚙️</span>
+          <strong>Control it in Settings</strong>
+          <p>You can disable usage analytics in the app’s data collection settings.</p>
+        </article>
+      </section>
+
+      <nav class="toc" aria-label="Privacy Policy table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#section-1">Information We Collect</a></li>
+          <li><a href="#section-2">Information not collected</a></li>
+          <li><a href="#section-3">Purposes of Processing</a></li>
+          <li><a href="#section-4">Retention Period</a></li>
+          <li><a href="#section-5">Service Providers and International Transfers</a></li>
+          <li><a href="#section-6">Your Rights and Opt-Out Options</a></li>
+          <li><a href="#section-7">Automatic Collection Technologies</a></li>
+          <li><a href="#section-8">Security Measures</a></li>
+          <li><a href="#section-9">Changes to This Policy</a></li>
+          <li><a href="#section-10">Contact Information</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="policy-section" id="section-1">
+        <h2 class="section-title">
+          <span class="section-number">1</span>
+          <span>Information and Usage Data We Collect</span>
+        </h2>
+
+        <p>
+          Hamkkae does not require account registration or login. To provide, improve, and operate the service reliably, we may automatically collect or process the information listed below.
+        </p>
+
+        <h3>A. Identifiers</h3>
+        <div class="data-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Collection context</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Advertising ID (GAID)</td>
+                <td>In builds that include ads and when Google AdMob is used</td>
+                <td>Ad delivery, frequency capping, and fraud prevention</td>
+              </tr>
+              <tr>
+                <td>App instance ID / Firebase Installation ID</td>
+                <td>Firebase Analytics, Remote Config, and Installations</td>
+                <td>Usage analytics, configuration delivery, and service improvement</td>
+              </tr>
+              <tr>
+                <td>Crashlytics installation identifier</td>
+                <td>Firebase Crashlytics</td>
+                <td>Distinguishing and analyzing crash and error reports</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>B. Usage Analytics and App Activity</h3>
+        <ul>
+          <li><strong>Events:</strong> story and report creation, AI model downloads, ad viewing, sharing, notification settings, onboarding progress, and similar actions</li>
+          <li><strong>Event parameters:</strong> app language, inference backend (GPU/CPU), model version, inference duration, and similar technical values</li>
+          <li><strong>Automatically collected data:</strong> first launch, sessions, access frequency, user engagement, retention, and similar metrics</li>
+        </ul>
+
+        <div class="warning-box">
+          <span class="box-title">Content is not included in analytics events.</span>
+          We collect only event names and technical status values. Photos, story text, titles, notes, and tags are not sent to Firebase Analytics.
+        </div>
+
+        <h3>C. Device and App Environment Information</h3>
+        <p>
+          Firebase and advertising SDKs may automatically collect technical information such as device model, operating system version, language, country, locale, app version, and screen information.
+        </p>
+
+        <h3>D. Crash and Performance Information</h3>
+        <ul>
+          <li>Error and crash stack traces</li>
+          <li>App and device state at the time of an error</li>
+          <li>Custom diagnostic keys such as inference backend and model version</li>
+        </ul>
+
+        <h3>E. Photo Location Information</h3>
+        <p>
+          If a selected photo contains GPS metadata and you grant the relevant permission, Hamkkae may read the GPS coordinates from the photo’s EXIF metadata and convert them into a human-readable place name.
+        </p>
+        <div class="info-box">
+          <span class="box-title">Important information about location conversion</span>
+          Hamkkae uses Android Geocoder to convert coordinates into a place name. Depending on the device and service environment, the coordinates may be sent to Google’s geocoding service. <strong>The photo itself is not transmitted; only the coordinates may be sent.</strong>
+        </div>
+
+        <h3>F. Network Connection Information</h3>
+        <p>
+          When downloading AI models from Hugging Face or communicating with services such as Firebase and AdMob, network information including your IP address, request time, and request details may be transmitted to those service providers.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-2">
+        <h2 class="section-title">
+          <span class="section-number">2</span>
+          <span>Information not collected</span>
+        </h2>
+
+        <div class="positive-box">
+          <span class="box-title">Hamkkae processes core content on-device.</span>
+          The information below is processed on your device and is not transmitted to Hamkkae’s servers, Firebase Analytics, Crashlytics, or advertising SDKs.
+        </div>
+
+        <div class="chip-list" aria-label="Information not collected">
+          <span class="chip accent">Photos and videos</span>
+          <span class="chip accent">Story text</span>
+          <span class="chip accent">Titles</span>
+          <span class="chip accent">Notes and tags</span>
+          <span class="chip accent">Pet names</span>
+          <span class="chip accent">Pet profiles</span>
+          <span class="chip accent">Location notes</span>
+        </div>
+
+        <p>
+          Because Hamkkae does not provide account registration or login, we do not collect member information used to directly identify you, such as your name, email address, or phone number.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-3">
+        <h2 class="section-title">
+          <span class="section-number">3</span>
+          <span>Purposes of Processing</span>
+        </h2>
+
+        <ul>
+          <li>Analyzing feature usage and improving the service</li>
+          <li>Analyzing errors, crashes, and performance issues to improve stability</li>
+          <li>Delivering ads, controlling ad frequency, and preventing fraud</li>
+          <li>Displaying a human-readable place name based on photo GPS coordinates</li>
+          <li>Providing AI models and app configuration files</li>
+        </ul>
+
+        <p>
+          We use collected information only for the purposes described above. If those purposes change, we will provide additional notice or obtain consent where required by applicable law.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-4">
+        <h2 class="section-title">
+          <span class="section-number">4</span>
+          <span>Retention Period</span>
+        </h2>
+
+        <div class="data-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Retention period</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Firebase Analytics events</td>
+                <td>Up to 90 days</td>
+                <td>Subject to the actual retention configuration in the Firebase console</td>
+              </tr>
+              <tr>
+                <td>Firebase Crashlytics information</td>
+                <td>Up to 90 days</td>
+                <td>Deleted after the diagnostic purpose is fulfilled or according to the provider’s policy</td>
+              </tr>
+              <tr>
+                <td>Advertising-related information</td>
+                <td>According to Google advertising policies and settings</td>
+                <td>May be affected by advertising ID resets and device settings</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Hamkkae does not operate user accounts. Deleting the app removes locally stored app data and breaks the association with the previous app installation identifier. Information already processed by external service providers may remain for a period determined by each provider’s retention policy.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-5">
+        <h2 class="section-title">
+          <span class="section-number">5</span>
+          <span>Service Providers and International Transfers</span>
+        </h2>
+
+        <p>
+          Hamkkae uses the external services listed below to operate the app. In this process, information may be processed on servers located outside the Republic of Korea.
+        </p>
+
+        <div class="data-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Service provider</th>
+                <th>Service used</th>
+                <th>Transferred or processed data</th>
+                <th>Purpose</th>
+                <th>Location and transfer method</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google LLC</td>
+                <td>Firebase Analytics, Crashlytics, Remote Config, Installations, AdMob, and Geocoding</td>
+                <td>Installation identifiers, app activity, device information, error information, advertising ID, location coordinates, IP address, and request information</td>
+                <td>Analytics, error diagnostics, configuration delivery, ad delivery, and location-name conversion</td>
+                <td>Transferred over the network to Google data-processing locations, including the United States, when the service is used</td>
+              </tr>
+              <tr>
+                <td>Hugging Face, Inc.</td>
+                <td>AI model file downloads</td>
+                <td>IP address and request information</td>
+                <td>Providing and downloading AI models</td>
+                <td>Transferred to overseas servers when a model download is requested</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The retention period for internationally transferred information follows this Policy and each service provider’s policy.
+          You may limit certain processing as described in “Your Rights and Opt-Out Options” below.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-6">
+        <h2 class="section-title">
+          <span class="section-number">6</span>
+          <span>Your Rights and Opt-Out Options</span>
+        </h2>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step-badge">Analytics</span>
+            <div>
+              <strong>Disable usage analytics</strong><br />
+              You can disable usage analytics under <strong>More → Settings → Data Collection</strong> in the app.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">Crash</span>
+            <div>
+              <strong>Crash reporting</strong><br />
+              Crashlytics information is collected continuously to maintain app stability and respond to errors, and no separate toggle is provided.
+              Photos and story text are not included in crash reports.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">Location</span>
+            <div>
+              <strong>Limit use of photo location information</strong><br />
+              GPS coordinates are not used if you deny photo-location access or select a photo without location metadata.
+              You can change this permission at any time in Android’s photo location access settings.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">Ads</span>
+            <div>
+              <strong>Control the advertising identifier</strong><br />
+              You can delete or reset the advertising ID and change ad-personalization choices in your Android device’s advertising privacy or ad settings.
+            </div>
+          </div>
+
+          <div class="step">
+            <span class="step-badge">Delete</span>
+            <div>
+              <strong>Delete app data and disconnect the installation identifier</strong><br />
+              Deleting the app removes Hamkkae’s locally stored data from the device and breaks the association with the app installation identifier.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section" id="section-7">
+        <h2 class="section-title">
+          <span class="section-number">7</span>
+          <span>Automatic Collection Technologies</span>
+        </h2>
+
+        <p>
+          Hamkkae uses third-party SDKs, including Firebase SDKs and the Google Mobile Ads SDK.
+          These SDKs may automatically collect information related to app launches, usage events, installation identifiers,
+          device environment, errors, and advertising.
+        </p>
+
+        <ul>
+          <li><strong>Firebase Analytics:</strong> collection of app usage analytics and automatic events</li>
+          <li><strong>Firebase Crashlytics:</strong> collection of crashes, errors, and diagnostic information</li>
+          <li><strong>Firebase Remote Config and Installations:</strong> delivery of app configuration and installation-level identification</li>
+          <li><strong>Google AdMob:</strong> ad delivery, frequency control, and fraud prevention</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="section-8">
+        <h2 class="section-title">
+          <span class="section-number">8</span>
+          <span>Security Measures</span>
+        </h2>
+
+        <ul>
+          <li>Processing core content such as photos and stories on-device whenever possible</li>
+          <li>Restricting analytics events and error logs from recording content or direct identifiers</li>
+          <li>Using encrypted communications such as HTTPS when communicating with external services</li>
+          <li>Collecting only the minimum information required to operate the service</li>
+          <li>Periodically reviewing external SDKs and processed data categories</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="section-9">
+        <h2 class="section-title">
+          <span class="section-number">9</span>
+          <span>Changes to This Privacy Policy</span>
+        </h2>
+
+        <p>
+          If this Policy changes, we will provide notice of the changes and effective date through app update notes, an in-app notice, or this page. If a change materially affects your rights, we will provide advance notice within a reasonable period before it takes effect.
+        </p>
+      </section>
+
+      <section class="policy-section" id="section-10">
+        <h2 class="section-title">
+          <span class="section-number">10</span>
+          <span>Privacy Contact</span>
+        </h2>
+
+        <p>
+          You may use the contact information below for questions, complaints, or requests relating to privacy and personal information.
+        </p>
+
+        <dl class="contact-card">
+          <dt>Service</dt>
+          <dd>Hamkkae</dd>
+
+          <dt>Operator / Business name</dt>
+          <dd><span class="placeholder">Hamkkae</span></dd>
+
+          <dt>Email</dt>
+          <dd><span class="placeholder">cool.sukim@gmail.com</span></dd>
+
+          <dt>Response time</dt>
+          <dd>We will respond within a reasonable period after receiving your request.</dd>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Discover a feeling you may have missed in the moments you shared.</p>
+      <p>© 2026 Hamkkae. All rights reserved.</p>
+      <a class="top-button" href="#top">Back to top ↑</a>
+    </footer>
+  </div>
+</body>
+</html>
